@@ -141,7 +141,7 @@ module Av
           add_output_param 'acodec', 'libvorbis'
           add_output_param 'vcodec', 'libtheora'
         when /mp4$/
-          add_output_param 'acodec', 'aac'
+          add_output_param 'acodec', 'aac' unless File.extname(@source)==".webm"
           add_output_param 'strict', 'experimental'
         end
       end
